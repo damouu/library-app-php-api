@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  php:
+    image: damou/library-app:api-php5
+    container_name: php-library-app
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - library-app_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-library-app
+    hostname: mongodb
+    ports:
+      - "27018:27017"
+    networks:
+      - library-app_network
+
+networks:
+  library-app_network:
+    driver: bridge
+    name: library-app_network
