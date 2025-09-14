@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/pokemon/{name}', [PokemonController::class, 'getPokemonByName']);
+Route::get('/user/{email}', [UserController::class, 'getUserByEmail']);
 
 Route::get('/', function () {
     return view('welcome');
