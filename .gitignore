@@ -25,4 +25,4 @@ Homestead.json
 
 .idea
 .gitignore
-database/seeders
+database/seeders/seed.json
