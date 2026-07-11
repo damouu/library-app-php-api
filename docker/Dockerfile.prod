@@ -28,7 +28,7 @@ FROM php:8.4-apache AS production
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
-RUN install-php-extensions rdkafka mongodb mbstring zip
+RUN install-php-extensions rdkafka mongodb mbstring zip opentelemetry
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN a2enmod rewrite
